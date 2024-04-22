@@ -28,7 +28,7 @@ def convert_to_grade(predicted_grade):
 
 @app.route('/')
 def home():
-    return render_template('index1.html')
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -48,7 +48,7 @@ def predict():
         predicted_grade = predict_grade(features_values)
         grade = convert_to_grade(predicted_grade)
 
-        return render_template('index1.html', grade=grade)
+        return render_template('index.html', grade=grade)
 
 if __name__ == '__main__':
     app.run(debug=True)
